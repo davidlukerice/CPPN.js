@@ -1,0 +1,40 @@
+
+CPPN Viewer TODO list
+
+
+
+Current:
+
+ - Interface
+	- Higher Quality
+
+
+
+TODO: 
+
+Stage 1:
+ - visualize output (b/w-1out or color-3out) --> Various quality
+ - visualize network
+ - Edit cppn (weights, function)
+ - save/load cppn (just json string for now)
+
+Stage 2:
+
+ - mutate
+ 	- random
+ 	- select type (initially just forms)
+ 		- split conn: random / selected
+ 		- add conn: random / selected (if allowed)
+ 		- remove conn: random / selected (if allowed)
+ 		- interactive selection of node/network
+
+Stage 3:
+ - History
+ 	- Tree of mutation
+ 		- Traversal
+ 		- Mutation
+ 		- earlier changes can affect later networks
+
+Future Ideas:
+ - Mutating population
+ 	- Crossover

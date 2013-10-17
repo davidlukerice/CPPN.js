@@ -1,0 +1,79 @@
+body {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+
+.thumbnails {
+	height: 20%;
+	overflow-y: hidden;
+	overflow-x: auto;
+	border-bottom: 1px solid black;
+	white-space: nowrap;
+}
+	.thumbnails > .networks {
+		height:100%;
+	}
+		.thumbnails > .networks img {
+			display: inline-block;
+			width: 24%;
+			border: 1px solid black;
+			margin: 0.25%;
+			cursor: pointer;
+		}
+		.thumbnails > .networks img:hover {
+			opacity:0.8;
+			filter:alpha(opacity=80);
+		}
+	.thumbnails > button {
+		position: fixed;
+	}
+		.thumbnails > button.reset {
+			top: 10px;
+			left: 20px;
+		}
+		.thumbnails > button.random {
+			top: 10px;
+			right: 20px;
+		}
+		.thumbnails > button.split {
+			top: 35px;
+			right: 20px;
+		}
+		.thumbnails > button.connection {
+			top: 60px;
+			right: 20px;
+		}
+		.thumbnails > button.weightMutation {
+			top: 85px;
+			right: 20px;
+		}
+
+.rendered img {
+	width: 80%;
+	margin: 0.5%;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+.clearfix:before,
+.clearfix:after {
+	content:"";
+	display:table;
+}
+.clearfix:after {
+	clear:both;
+}
+/* For IE 6/7 (trigger hasLayout) */
+.clearfix {
+	zoom:1;
+}
