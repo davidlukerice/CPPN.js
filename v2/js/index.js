@@ -77,6 +77,14 @@
 		}
 
 		var diff = 200;
+		var animateSpeed = 750;
+		function getInitialD(e,i) {
+			var x1 = getX1(e),
+				y1 = getY1(e);
+			return 'M'+x1+','+y1+' C'+x1+
+				   ','+y1+' '+x1+','+y1+
+				   ' '+x1+','+y1;
+		}
 		function getD(e,i) {
 			var x1 = getX1(e),
 				y1 = getY1(e),
@@ -104,7 +112,7 @@
 				.data(nodes);
 
 		dNodes.transition()
-			.duration(750)
+			.duration(animateSpeed)
 			.attr('cx', getX)
 			.attr('cy', getY);
 
@@ -112,23 +120,29 @@
 			.attr('class', 'node')
 			.attr('cx', getX)
 			.attr('cy', getY)
-			.attr('r', 10)
+			.attr('r', 0)
 			.attr('stroke', 'black')
 			.attr('stroke-width', 2)
-			.attr('fill', 'red');
+			.attr('fill', 'red')
+			.transition()
+				.duration(animateSpeed)
+				.attr('r', 10);
 
 		// Render edges
 		var dEdges = svg.select('.edges').selectAll('.edge')
 				.data(edges);
 		dEdges.transition()
-			.duration(750)
+			.duration(animateSpeed)
 			.attr('d', getD);
 		dEdges.enter().append('path')
 			.attr('class', 'edge')
-			.attr('d', getD)
+			.attr('d', getInitialD)
 			.attr('fill', 'none')
 			.style('stroke', 'black')
-			.style('stroke-width', 2);
+			.style('stroke-width', 2)
+			.transition()
+				.duration(animateSpeed)
+				.attr('d', getD);
 	});
 
 })(jQuery);
