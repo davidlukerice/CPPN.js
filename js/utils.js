@@ -154,7 +154,7 @@ var CPPN = CPPN || {};
 		},
 
 		randomIn: function(min,max) {
-			return Math.random()*max + min;
+			return Math.random()*(max-min) + min;
 		},
 
 		randomIndexIn: function(min, max) {
